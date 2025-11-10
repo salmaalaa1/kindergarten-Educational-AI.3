@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>AduKid_AI | منصة التعلم بالذكاء الاصطناعي</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="منصة تعليمية مبتكرة لرياض الأطفال باستخدام الذكاء الاصطناعي - مشروع معرض ISEF 2025">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========== CSS Reset ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #fff5e6 0%, #fff9f0 100%);
+      color: #2d3748;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* ========== التصميم الرئيسي ========== */
+    .main-card {
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 15px 50px rgba(232, 130, 42, 0.15);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #ffe0b8;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 3px dashed #ffd1a4;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #e8822a;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(232, 130, 42, 0.2);
+    }
+
+    .tagline {
+      color: #718096;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    /* ========== محتوى الصفحة ========== */
+    .content-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e8822a;
+      margin-bottom: 1rem;
+      padding-right: 0.5rem;
+      border-right: 4px solid #e8822a;
+      background: linear-gradient(135deg, #fff8f0 0%, transparent 100%);
+      padding: 0.8rem 1rem;
+      border-radius: 15px;
+    }
+
+    .section-content {
+      color: #4a5568;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .features-list li {
+      padding: 0.6rem 0;
+      padding-right: 2rem;
+      position: relative;
+      color: #4a5568;
+      font-size: 1rem;
+      background: #fffaf0;
+      margin-bottom: 0.5rem;
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      padding-right: 2.5rem;
+    }
+
+    .features-list li::before {
+      content: "🎯";
+      color: #e8822a;
+      font-weight: bold;
+      position: absolute;
+      right: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #fff0d9 0%, #ffe8cc 100%);
+      border: 2px dashed #e8822a;
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin: 1.8rem 0;
+      position: relative;
+    }
+
+    .highlight-box::before {
+      content: "💡";
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      background: white;
+      padding: 5px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+    }
+
+    .highlight-title {
+      font-weight: 700;
+      color: #e8822a;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 3px dashed #ffd1a4;
+    }
+
+    .start-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #e8822a, #ff9d45);
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(232, 130, 42, 0.4);
+      transition: all 0.3s ease;
+      border: 3px solid #ffb366;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .start-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .start-button:hover::before {
+      left: 100%;
+    }
+
+    .start-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(232, 130, 42, 0.6);
+      background: linear-gradient(135deg, #ff9d45, #e8822a);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #718096;
+      font-size: 0.9rem;
+      padding: 1rem;
+      background: #fffaf0;
+      border-radius: 15px;
+    }
+
+    /* ========== التصميم الديكوري ========== */
+    .decoration {
+      position: absolute;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .decoration-1 {
+      top: -30px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      background: #e8822a;
+      border-radius: 50%;
+    }
+
+    .decoration-2 {
+      bottom: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: #4299e1;
+      border-radius: 50%;
+    }
+
+    .decoration-3 {
+      top: 20%;
+      left: 30px;
+      width: 80px;
+      height: 80px;
+      background: #38b2ac;
+      border-radius: 20px;
+      transform: rotate(45deg);
+    }
+
+    .decoration-4 {
+      bottom: 30%;
+      right: 10%;
+      width: 60px;
+      height: 60px;
+      background: #ff9d45;
+      border-radius: 50%;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ========== إيموجيز وإضافات طفولية ========== */
+    .fun-emoji {
+      font-size: 1.2rem;
+      margin-left: 0.3rem;
+    }
+
+    .child-friendly {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23e8822a" opacity="0.1"/></svg>');
+      background-size: 200px 200px;
+    }
+
+    /* ========== التجاوب ========== */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .main-card {
+        padding: 2rem 1.5rem;
+        border-radius: 25px;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .section-content {
+        font-size: 0.95rem;
+      }
+      
+      .start-button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-card {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+      }
+      
+      .logo {
+        font-size: 1.8rem;
+      }
+      
+      .start-button {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+      }
+      
+      .features-list li {
+        padding: 0.7rem 1rem;
+        padding-right: 2.5rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body class="child-friendly">
+  <div class="container">
+    <div class="main-card">
+      <!-- العناصر الديكورية -->
+      <div class="decoration decoration-1"></div>
+      <div class="decoration decoration-2"></div>
+      <div class="decoration decoration-3"></div>
+      <div class="decoration decoration-4"></div>
+      
+      <div class="content-wrapper">
+        <!-- الهيدر -->
+        <div class="header">
+          <div class="logo">AduKid_AI <span class="fun-emoji">🧸</span></div>
+          <div class="tagline">منصة التعلم الذكي لرياض الأطفال - معرض ISEF 2025</div>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="content-section">
+          <h2 class="section-title">مرحباً بكم في AduKid_AI <span class="fun-emoji">🎈</span></h2>
+          <p class="section-content">
+            منصة تعليمية مبتكرة تجمع بين الذكاء الاصطناعي والتعلم التفاعلي، مصممة خصيصاً لأطفال مرحلة رياض الأطفال. 
+            نقدم تجربة تعليمية فريدة تحول التعلم إلى مغامرة ممتعة وآمنة.
+          </p>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">ماذا نقدم للأطفال؟ <span class="fun-emoji">🎨</span></h2>
+          <p class="section-content">
+            في AduKid_AI، نقدم بيئة تعلم ذكية تتكيف مع كل طفل بشكل فردي، حيث يصمم الذكاء الاصطناعي أنشطة تعليمية تناسب مستوى وقدرات كل متعلم.
+          </p>
+          <ul class="features-list">
+            <li>تعلم الحروف والأرقام بطريقة تفاعلية وجذابة</li>
+            <li>أنشطة تعليمية ممتعة تعزز التفكير والإبداع</li>
+            <li>ألعاب تعليمية ذكية تنمي المهارات المعرفية</li>
+            <li>أنشطة فنية وتنموية شاملة</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">للآباء والمعلمين <span class="fun-emoji">👨‍👩‍👧‍👦</span></div>
+          <p class="section-content">
+            نوفر نظام متابعة ذكي يمكن أولياء الأمور والمعلمين من متابعة تقدم الأطفال، مع تقارير مفصلة ونصائح تربوية مبنية على تحليل الذكاء الاصطناعي.
+          </p>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">تقنية الذكاء الاصطناعي <span class="fun-emoji">🤖</span></h2>
+          <p class="section-content">
+            نستخدم أحدث تقنيات الذكاء الاصطناعي لتخصيص تجربة التعلم لكل طفل، حيث يحلل النظام أداء الطفل ويقدم محتوى يتناسب مع عمره وقدراته التعليمية.
+          </p>
+        </div>
+
+        <div class="content-section">
+          <h2 class="section-title">لماذا AduKid_AI؟ <span class="fun-emoji">⭐</span></h2>
+          <p class="section-content">
+            نحن نتميز بتقديم محتوى تعليمي عالي الجودة في بيئة آمنة، مع تصميم جذاب يناسب الأطفال ودعم كامل للعائلة والكوادر التعليمية.
+          </p>
+        </div>
+
+        <!-- زر البدء -->
+        <div class="cta-section">
+          <a href="stages.html" class="start-button">
+            ابدأ رحلة التعلم الآن <span class="fun-emoji">🚀</span>
+          </a>
+        </div>
+
+        <!-- الفوتر -->
+        <div class="footer">
+          © 2024 AduKid_AI - مشروع معرض ISEF 2025. جميع الحقوق محفوظة. <span class="fun-emoji">🎉</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

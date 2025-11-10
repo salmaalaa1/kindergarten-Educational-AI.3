@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>سمارت كيدز | المكتبة الرقمية التفاعلية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="استعرض مكتبة سمارت كيدز الرقمية للأطفال في رياض الأطفال، واختر لغة الملف ومرحلة KG1 أو KG2 قبل عرض ملف الـ PDF."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF9E1F;
+      --primary-dark: #E88A0D;
+      --primary-light: #FFD699;
+      --secondary: #4A90E2;
+      --secondary-light: #8EC0F0;
+      --accent: #FF6B6B;
+      --dark: #2D3748;
+      --light: #F7FAFC;
+      --white: #FFFFFF;
+      --gray-light: #E2E8F0;
+      --gray: #A0AEC0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin: 1rem auto;
+      max-width: min(1200px, 94vw);
+      box-shadow: var(--shadow);
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .brand span:first-child {
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* زر القائمة المنسدلة */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--dark);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    main {
+      max-width: min(1200px, 94vw);
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-heading h2 {
+      font-size: 2.2rem;
+      margin: 1rem 0;
+      color: var(--dark);
+    }
+
+    .section-heading p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--dark);
+      opacity: 0.8;
+      font-size: 1.1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 158, 31, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 158, 31, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--primary);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--light);
+      color: var(--dark);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn-pill:hover {
+      background: var(--gray-light);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--dark);
+      opacity: 0.7;
+      border-top: 1px solid var(--gray-light);
+      margin-top: 4rem;
+    }
+
+    /* تصميم المكتبة المعدل */
+    .library-hero {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+
+    .library-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 158, 31, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .library-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .library-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .library-hero h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .library-hero p {
+      color: var(--dark);
+      opacity: 0.8;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .book-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .book-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to left, var(--primary), var(--secondary));
+    }
+
+    .book-card__title {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .book-card__title span {
+      font-size: 2.2rem;
+    }
+
+    .book-card p {
+      margin: 0;
+      color: var(--dark);
+      opacity: 0.8;
+      flex-grow: 1;
+    }
+
+    .book-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .book-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 50px;
+      background: var(--light);
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    .subject-section {
+      margin-top: 4rem;
+    }
+
+    .subject-section h2 {
+      font-size: 2.2rem;
+      margin: 1rem 0;
+      color: var(--dark);
+    }
+
+    .subject-section p {
+      max-width: 700px;
+      color: var(--dark);
+      opacity: 0.8;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* محدد المرحلة */
+    .stage-switcher {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--light);
+      padding: 0.5rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow);
+      width: fit-content;
+      margin: 1.5rem auto 0;
+    }
+
+    .stage-switcher button {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      background: transparent;
+      color: var(--dark);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .stage-switcher button[data-active="true"] {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(255, 158, 31, 0.3);
+    }
+
+    .stage-switcher button:hover:not([data-active="true"]) {
+      background: var(--gray-light);
+    }
+
+    /* PDF Viewer Styles */
+    .pdf-viewer-container {
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+    }
+
+    .pdf-viewer-container.active {
+      display: flex;
+    }
+
+    .pdf-viewer-header {
+      padding: 1rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .pdf-viewer-header h3 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .pdf-viewer-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .pdf-viewer-iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: var(--light);
+    }
+
+    .pdf-viewer-actions {
+      padding: 1rem;
+      background: var(--light);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    /* زر المساعد الذكي */
+    .ai-assistant {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 1000;
+    }
+
+    .ai-button {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+      border-radius: 50%;
+    }
+
+    .ai-button:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .ai-button.pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 31, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(255, 158, 31, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 31, 0);
+      }
+    }
+
+    .ai-tooltip {
+      position: absolute;
+      bottom: 85px;
+      left: 0;
+      background: var(--white);
+      color: var(--dark);
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      width: 200px;
+      text-align: center;
+      font-weight: 500;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      transform: translateY(10px);
+    }
+
+    .ai-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 10px solid transparent;
+      border-top-color: var(--white);
+    }
+
+    .ai-button:hover + .ai-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* نافذة الدردشة */
+    .ai-chat {
+      position: fixed;
+      bottom: 120px;
+      left: 30px;
+      width: 350px;
+      height: 450px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      z-index: 1001;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .ai-chat.active {
+      display: flex;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .close-chat:hover {
+      transform: scale(1.2);
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .ai-message {
+      background: var(--light);
+      color: var(--dark);
+      align-self: flex-start;
+      border-bottom-right-radius: 0.2rem;
+    }
+
+    .user-message {
+      background: var(--primary-light);
+      color: var(--dark);
+      align-self: flex-end;
+      border-bottom-left-radius: 0.2rem;
+    }
+
+    .chat-footer {
+      padding: 1rem;
+      border-top: 1px solid var(--gray-light);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--gray-light);
+      border-radius: 50px;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .chat-input:focus {
+      border-color: var(--primary);
+    }
+
+    .send-button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .send-button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    /* تحسينات للاستجابة */
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 0.3rem;
+      }
+      
+      .nav-links a {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background: var(--white);
+        padding: 1rem 0;
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+        border-radius: 0 0 var(--radius) var(--radius);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+      
+      .nav-links.active {
+        display: flex;
+        max-height: 500px;
+        padding: 1rem 0;
+      }
+      
+      .nav-links a {
+        padding: 0.8rem 2rem;
+        border-radius: 0;
+        border-bottom: 1px solid var(--gray-light);
+        transition: all 0.3s ease;
+      }
+      
+      .nav-links a:hover {
+        background-color: var(--primary-light);
+        transform: translateX(-5px);
+      }
+      
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+      
+      .nav-links a.active {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+        font-weight: bold;
+        border-right: 4px solid var(--primary);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .library-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+      
+      .pdf-viewer-header {
+        padding: 1rem;
+      }
+      
+      .pdf-viewer-header h3 {
+        font-size: 1.2rem;
+      }
+      
+      .ai-chat {
+        width: 300px;
+        height: 400px;
+        left: 20px;
+        bottom: 110px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .pdf-viewer-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .ai-assistant {
+        bottom: 20px;
+        left: 20px;
+      }
+      
+      .ai-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+      
+      .ai-chat {
+        width: calc(100vw - 40px);
+        left: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">
+      <span>🌟</span>
+      <span>سمارت كيدز</span>
+    </a>
+    
+    <!-- زر القائمة المنسدلة -->
+    <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="nav-links" aria-label="روابط التنقل الأساسية">
+      <a href="index.html">الرئيسية</a>
+      <a href="stages.html">المراحل</a>
+      <a href="dashboard.html">لوحة التعلم</a>
+      <a href="games.html">الألعاب التعليمية</a>
+      <a href="books.html" class="active" aria-current="page">المكتبة الرقمية</a>
+      <a href="stories.html">القصص الصوتية</a>
+      <a href="parent-report.html">لوحة ولي الأمر</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="library-hero">
+      <span class="badge">📚 مكتبة رقمية للأطفال</span>
+      <h1>مكتبة سمارت كيدز التفاعلية</h1>
+      <p>
+        اختر من بين كتب مصورة وقصص تعليمية مناسبة لرياض الأطفال. اضغط على أي كتاب لفتحه مباشرة في المتصفح.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.6rem;">
+        <span class="badge">🧠 محتوى متوافق مع المنهج</span>
+        <span class="badge">🗣️ لغتان: العربية والإنجليزية</span>
+        <span class="badge">📄 ملفات PDF قابلة للتحميل</span>
+      </div>
+      
+      <!-- محدد المرحلة -->
+      <div class="stage-switcher" style="margin-top: 1.5rem;">
+        <button type="button" data-stage-btn data-stage="KG1" data-active="true">KG1 (4-5 سنوات)</button>
+        <button type="button" data-stage-btn data-stage="KG2">KG2 (5-6 سنوات)</button>
+      </div>
+    </section>
+
+    <section class="subject-section" id="arabic-books">
+      <div class="section-heading">
+        <span class="badge">كتب تعليمية</span>
+        <h2>📖 كتب اللغة العربية</h2>
+        <p>كتب تعليمية باللغة العربية مصممة خصيصًا لمرحلة رياض الأطفال</p>
+      </div>
+
+      <div class="library-grid" data-books-grid>
+        <!-- يتم ملء البطاقات عبر JavaScript -->
+      </div>
+    </section>
+
+    <section class="subject-section" id="english-books">
+      <div class="section-heading">
+        <span class="badge">كتب تعليمية</span>
+        <h2>📚 كتب اللغة الإنجليزية</h2>
+        <p>كتب تعليمية باللغة الإنجليزية مصممة خصيصًا لمرحلة رياض الأطفال</p>
+      </div>
+
+      <div class="library-grid" data-english-books-grid>
+        <!-- يتم ملء البطاقات عبر JavaScript -->
+      </div>
+    </section>
+
+    <section class="subject-section" style="margin-top:3.8rem;">
+      <div class="book-card">
+        <h2 style="margin:0;">نصائح للاستفادة من ملفات الـ PDF</h2>
+        <ul style="margin:0;padding-inline-start:1.5rem;color:var(--dark);opacity:0.8;line-height:1.85;">
+          <li>اختر الكتاب المناسب لعمر طفلك ومستواه التعليمي.</li>
+          <li>استخدم خاصية الطباعة لتجهيز نسخ ورقية للأنشطة التفاعلية داخل المنزل أو الصف.</li>
+          <li>يمكن للمساعد الذكي في المنصة قراءة الملف بصوتٍ عالٍ عند الحاجة لدعم مهارات النطق.</li>
+          <li>استخدم زر الرجوع للعودة إلى المكتبة واختيار كتاب آخر.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> منصة سمارت كيدز التعليمية • استمتع بالقراءة والتعلم مع مكتبة سمارت كيدز الرقمية! 📚
+  </footer>
+
+  <!-- PDF Viewer -->
+  <div class="pdf-viewer-container" id="pdfViewer">
+    <div class="pdf-viewer-header">
+      <h3 id="pdfViewerTitle">عرض الكتاب</h3>
+      <button class="btn-pill" type="button" id="closePdfViewer" style="background: rgba(255,255,255,0.2); color: white;">✕ إغلاق</button>
+    </div>
+    <div class="pdf-viewer-content">
+      <iframe class="pdf-viewer-iframe" id="pdfFrame" title="عارض PDF"></iframe>
+    </div>
+    <div class="pdf-viewer-actions">
+      <button class="btn-secondary" id="backToLibrary">← العودة إلى المكتبة</button>
+      <a class="btn-primary" id="downloadPdf" download>📥 تحميل الملف</a>
+    </div>
+  </div>
+
+  <!-- زر المساعد الذكي -->
+  <div class="ai-assistant">
+    <button class="ai-button pulse">🤖</button>
+    <div class="ai-tooltip">اسألني عن أي شيء!</div>
+    
+    <!-- نافذة الدردشة -->
+    <div class="ai-chat">
+      <div class="chat-header">
+        <h3><span>🤖</span> المساعد الذكي</h3>
+        <button class="close-chat">×</button>
+      </div>
+      <div class="chat-body">
+        <div class="message ai-message">
+          مرحباً! أنا المساعد الذكي لسمارت كيدز. كيف يمكنني مساعدتك اليوم؟
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" class="chat-input" placeholder="اكتب رسالتك هنا...">
+        <button class="send-button">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    const booksData = [
+      {
+        id: "arabic-kg1",
+        emoji: "📘",
+        title: "كتاب اللغة العربية - KG1",
+        summary: "كتاب تعليمي شامل باللغة العربية مصمم خصيصًا لمرحلة KG1، يحتوي على أنشطة تفاعلية وتدريبات ممتعة.",
+        badges: ["العربية", "KG1", "28 صفحة"],
+        pdf: "Arabic_KG1.pdf",
+        stage: "KG1"
+      },
+      {
+        id: "arabic-kg2",
+        emoji: "📗",
+        title: "كتاب اللغة العربية - KG2",
+        summary: "كتاب تعليمي متقدم باللغة العربية مصمم خصيصًا لمرحلة KG2، مع أنشطة أكثر تعقيدًا وتحديًا.",
+        badges: ["العربية", "KG2", "32 صفحة"],
+        pdf: "Arabic_KG2.pdf",
+        stage: "KG2"
+      }
+    ];
+
+    const englishBooksData = [
+      {
+        id: "english-kg1",
+        emoji: "📕",
+        title: "English Book - KG1",
+        summary: "Comprehensive English learning book specially designed for KG1 level, with fun activities and exercises.",
+        badges: ["English", "KG1", "26 pages"],
+        pdf: "English_KG1.pdf",
+        stage: "KG1"
+      },
+      {
+        id: "english-kg2",
+        emoji: "📙",
+        title: "English Book - KG2",
+        summary: "Advanced English learning book specially designed for KG2 level, with more challenging activities.",
+        badges: ["English", "KG2", "30 pages"],
+        pdf: "English_KG2.pdf",
+        stage: "KG2"
+      }
+    ];
+
+    const booksGrid = document.querySelector("[data-books-grid]");
+    const englishBooksGrid = document.querySelector("[data-english-books-grid]");
+    const pdfViewer = document.getElementById("pdfViewer");
+    const pdfFrame = document.getElementById("pdfFrame");
+    const pdfViewerTitle = document.getElementById("pdfViewerTitle");
+    const closePdfViewer = document.getElementById("closePdfViewer");
+    const backToLibrary = document.getElementById("backToLibrary");
+    const downloadPdf = document.getElementById("downloadPdf");
+
+    function renderBooks() {
+      const fragment = document.createDocumentFragment();
+      
+      // الحصول على المرحلة الحالية من localStorage أو استخدام المرحلة الافتراضية
+      const currentStage = localStorage.getItem('selectedStage') || 'KG1';
+      
+      // تصفية الكتب حسب المرحلة
+      const filteredBooks = booksData.filter(book => book.stage === currentStage);
+
+      filteredBooks.forEach(book => {
+        const card = document.createElement("article");
+        card.className = "book-card";
+        card.innerHTML = `
+          <div class="book-card__title">
+            <span aria-hidden="true">${book.emoji}</span>
+            <div>
+              <h3 style="margin:0;">${book.title}</h3>
+              <p style="margin:0;color:var(--dark);opacity:0.6;font-size:0.9rem;">كتاب تعليمي باللغة العربية</p>
+            </div>
+          </div>
+          <p>${book.summary}</p>
+          <div class="book-meta">
+            ${book.badges.map(badge => `<span>${badge}</span>`).join("")}
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+            <button class="btn-primary" type="button" data-open-pdf data-book-id="${book.id}">
+              📖 قراءة الكتاب
+            </button>
+          </div>
+        `;
+        fragment.appendChild(card);
+      });
+
+      booksGrid.appendChild(fragment);
+    }
+
+    function renderEnglishBooks() {
+      const fragment = document.createDocumentFragment();
+      
+      // الحصول على المرحلة الحالية من localStorage أو استخدام المرحلة الافتراضية
+      const currentStage = localStorage.getItem('selectedStage') || 'KG1';
+      
+      // تصفية الكتب حسب المرحلة
+      const filteredBooks = englishBooksData.filter(book => book.stage === currentStage);
+
+      filteredBooks.forEach(book => {
+        const card = document.createElement("article");
+        card.className = "book-card";
+        card.innerHTML = `
+          <div class="book-card__title">
+            <span aria-hidden="true">${book.emoji}</span>
+            <div>
+              <h3 style="margin:0;">${book.title}</h3>
+              <p style="margin:0;color:var(--dark);opacity:0.6;font-size:0.9rem;">English Learning Book</p>
+            </div>
+          </div>
+          <p>${book.summary}</p>
+          <div class="book-meta">
+            ${book.badges.map(badge => `<span>${badge}</span>`).join("")}
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+            <button class="btn-primary" type="button" data-open-pdf data-book-id="${book.id}">
+              📖 Read Book
+            </button>
+          </div>
+        `;
+        fragment.appendChild(card);
+      });
+
+      englishBooksGrid.appendChild(fragment);
+    }
+
+    function openPdfViewer(bookId) {
+      let book;
+      
+      // البحث في الكتب العربية
+      book = booksData.find(item => item.id === bookId);
+      
+      // إذا لم يتم العثور عليه في الكتب العربية، ابحث في الكتب الإنجليزية
+      if (!book) {
+        book = englishBooksData.find(item => item.id === bookId);
+      }
+      
+      if (!book) return;
+
+      pdfViewerTitle.textContent = book.title;
+      pdfFrame.src = book.pdf;
+      downloadPdf.href = book.pdf;
+      downloadPdf.download = book.pdf;
+      
+      pdfViewer.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePdfViewerFunc() {
+      pdfViewer.classList.remove("active");
+      pdfFrame.src = "";
+      document.body.style.overflow = "auto";
+    }
+
+    // تفعيل زر القائمة المنسدلة
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      navLinks.classList.toggle('active');
+      this.setAttribute('aria-expanded', !isExpanded);
+      
+      // إضافة تأثير للزر عند النقر
+      if (!isExpanded) {
+        this.style.transform = 'rotate(90deg)';
+      } else {
+        this.style.transform = 'rotate(0deg)';
+      }
+    });
+    
+    // إغلاق القائمة عند النقر على رابط (لتحسين تجربة المستخدم على الجوال)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.style.transform = 'rotate(0deg)';
+      });
+    });
+
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navLinks.contains(event.target) || menuToggle.contains(event.target);
+      
+      if (!isClickInsideNav && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // تفعيل المساعد الذكي
+    const aiButton = document.querySelector('.ai-button');
+    const aiChat = document.querySelector('.ai-chat');
+    const closeChat = document.querySelector('.close-chat');
+    const sendButton = document.querySelector('.send-button');
+    const chatInput = document.querySelector('.chat-input');
+    const chatBody = document.querySelector('.chat-body');
+    
+    aiButton.addEventListener('click', () => {
+      aiChat.classList.toggle('active');
+    });
+    
+    closeChat.addEventListener('click', () => {
+      aiChat.classList.remove('active');
+    });
+    
+    function addMessage(text, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
+      messageDiv.textContent = text;
+      chatBody.appendChild(messageDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+    
+    sendButton.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message) {
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // محاكاة رد المساعد
+        setTimeout(() => {
+          const responses = [
+            "هذا سؤال رائع! يمكنني مساعدتك في ذلك.",
+            "أفهم ما تقصده. دعني أقدم لك بعض المعلومات المفيدة.",
+            "شكراً لسؤالك! إليك الإجابة التي تبحث عنها.",
+            "أنا هنا لمساعدتك. هل تحتاج إلى مزيد من التفاصيل؟"
+          ];
+          const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+          addMessage(randomResponse);
+        }, 1000);
+      }
+    });
+    
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+
+    renderBooks();
+    renderEnglishBooks();
+
+    // إضافة وظيفة تغيير المرحلة
+    function setStage(stage) {
+      localStorage.setItem('selectedStage', stage);
+      
+      // تحديث حالة الأزرار
+      document.querySelectorAll('[data-stage-btn]').forEach(btn => {
+        btn.setAttribute('data-active', btn.dataset.stage === stage);
+      });
+      
+      // إعادة عرض الكتب حسب المرحلة المختارة
+      booksGrid.innerHTML = '';
+      englishBooksGrid.innerHTML = '';
+      renderBooks();
+      renderEnglishBooks();
+      
+      // إعادة تفعيل أحداث الأزرار
+      attachPdfEvents();
+    }
+
+    // تفعيل أزرار تغيير المرحلة
+    document.querySelectorAll('[data-stage-btn]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setStage(btn.dataset.stage);
+      });
+    });
+
+    // تهيئة المرحلة الافتراضية
+    const savedStage = localStorage.getItem('selectedStage') || 'KG1';
+    setStage(savedStage);
+
+    // Check for hash in URL and set appropriate stage
+    const hash = window.location.hash;
+    if (hash === '#arabic-books') {
+      setStage('KG1');
+    } else if (hash === '#advanced-books') {
+      setStage('KG2');
+    }
+
+    // دالة لتفعيل أحداث PDF
+    function attachPdfEvents() {
+      // إزالة المستمعين السابقين لتجنب التكرار
+      document.removeEventListener("click", handlePdfClick);
+      closePdfViewer.removeEventListener("click", closePdfViewerFunc);
+      backToLibrary.removeEventListener("click", closePdfViewerFunc);
+      document.removeEventListener("keydown", handleEscapeKey);
+      
+      // إضافة المستمعين الجدد
+      document.addEventListener("click", handlePdfClick);
+      closePdfViewer.addEventListener("click", closePdfViewerFunc);
+      backToLibrary.addEventListener("click", closePdfViewerFunc);
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+    
+    function handlePdfClick(event) {
+      const openButton = event.target.closest("[data-open-pdf]");
+      if (openButton) {
+        event.preventDefault();
+        openPdfViewer(openButton.dataset.bookId);
+      }
+    }
+    
+    function handleEscapeKey(event) {
+      if (event.key === "Escape" && pdfViewer.classList.contains("active")) {
+        closePdfViewerFunc();
+      }
+    }
+
+    // تفعيل الأحداث عند التحميل
+    attachPdfEvents();
+  </script>
+
+  <!-- زر العودة للصفحة السابقة -->
+  <button class="return-button" onclick="history.back()">
+    ← العودة
+  </button>
+
+  <style>
+    /* زر العودة */
+    .return-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #E8822A, #FF9D45);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(232, 130, 42, 0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .return-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(232, 130, 42, 0.5);
+      background: linear-gradient(135deg, #FF9D45, #E8822A);
+    }
+
+    .return-button:active {
+      transform: translateY(0) scale(1);
+    }
+
+    @media (max-width: 768px) {
+      .return-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+</body>
+</html>

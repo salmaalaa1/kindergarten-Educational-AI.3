@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Word Trail | سمارت كيدز</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="رتب الحروف لتكوين كلمات إنجليزية بسيطة، مع دعم صوتي وتشجيع مستمر." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">
+      <span class="brand-icon" aria-hidden="true">🌟</span>
+      <span>سمارت كيدز</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="روابط الموقع">
+      <a href="index.html">الرئيسية</a>
+      <a href="stages.html">المراحل</a>
+      <a href="dashboard.html">لوحة التعلم</a>
+      <a href="games.html" class="active" aria-current="page">الألعاب التعليمية</a>
+      <a href="books.html">المكتبة الرقمية</a>
+      <a href="stories.html">القصص الصوتية</a>
+      <a href="parent-report.html">لوحة ولي الأمر</a>
+    </nav>
+  </header>
+
+  <main class="page-wrapper game-detail-page">
+    <section class="game-detail-hero">
+      <div class="game-detail-header">
+        <span class="badge">🛤️ Word Trail</span>
+        <h1>Arrange the letters to build happy words</h1>
+        <p>
+          ساعد القطار على الوصول إلى محطته من خلال ترتيب الحروف لتكوين كلمات بسيطة، مع عرض توضيحي ورسوم متحركة لكل كلمة.
+        </p>
+        <div class="game-detail-meta">
+          <span>Level 2</span>
+          <span>عدد الكلمات: 15</span>
+          <span>نظام مكافآت</span>
+        </div>
+        <div class="game-detail-actions">
+          <button type="button" class="btn-primary">Start Word Trail</button>
+          <a class="btn-secondary" href="games.html">⬅ Back to Games Hub</a>
+        </div>
+      </div>
+      <aside class="game-detail-card">
+        <h2>Achievements</h2>
+        <dl>
+          <div><dt>Words mastered</dt><dd>0 / 15</dd></div>
+          <div><dt>Bonus stars</dt><dd>0</dd></div>
+          <div><dt>Attempts used</dt><dd>0</dd></div>
+        </dl>
+        <p class="card-note">احصل على 5 كلمات متتالية صحيحة لتحصل على وسام “Word Explorer”.</p>
+      </aside>
+    </section>
+
+    <section class="game-instructions">
+      <header>
+        <h2>Game steps</h2>
+      </header>
+      <ol>
+        <li>استمع للكلمة منطوقة بالإنجليزية وشاهد صورتها.</li>
+        <li>اسحب الحروف بترتيب صحيح لتكوين الكلمة.</li>
+        <li>استمع للنطق مرة أخرى ثم كرر بصوتك.</li>
+        <li>أكمل جميع الكلمات لفتح اختبار التهجئة النهائي.</li>
+      </ol>
+    </section>
+
+    <section class="game-tasks">
+      <header>
+        <h2>Focus skills</h2>
+      </header>
+      <ul>
+        <li>تعزيز مهارة التهجئة الإنجليزية للكلمات البسيطة.</li>
+        <li>تنمية الوعي الصوتي وربط الصوت بالحرف.</li>
+        <li>تقوية القدرة على ترتيب الأحداث (البداية، الوسط، النهاية).</li>
+      </ul>
+    </section>
+
+    <section class="game-support">
+      <header>
+        <h2>Home challenge</h2>
+      </header>
+      <p>
+        اصنع بطاقات حروف وألّف كلمات جديدة مع طفلك، واطلب منه كتابة كل كلمة في دفتر النشاط مع رسم بسيط يعبّر عنها.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Smart Kids – English made joyful.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (navToggle) {
+      navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", !expanded);
+        navLinks.classList.toggle("is-open");
+      });
+    }
+  </script>
+  <!-- زر العودة -->
+  <style>
+    .return-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #e8822a, #ff9d45);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid #ffb366;
+    }
+    
+    .return-button:hover {
+      background: linear-gradient(135deg, #ff9d45, #e8822a);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+    
+    .return-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .return-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <a href="javascript:history.back()" class="return-button">← عودة</a>
+</body>
+</html>

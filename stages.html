@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>سمارت كيدز | المراحل التعليمية (KG1 & KG2)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="تعرّف على تفاصيل مرحلتي رياض الأطفال KG1 و KG2 في منصة سمارت كيدز، مع أهداف المهارات، الأنشطة المقترحة، والموارد التكميلية لكل مرحلة."
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FF9E1F;
+      --primary-dark: #E88A0D;
+      --primary-light: #FFD699;
+      --secondary: #4A90E2;
+      --secondary-light: #8EC0F0;
+      --accent: #FF6B6B;
+      --dark: #2D3748;
+      --light: #F7FAFC;
+      --white: #FFFFFF;
+      --gray-light: #E2E8F0;
+      --gray: #A0AEC0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+      --transition: all 0.3s ease;
+      --kg1-color: #118ab2;
+      --kg2-color: #fb8500;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin: 1rem auto;
+      max-width: min(1200px, 94vw);
+      box-shadow: var(--shadow);
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .brand span:first-child {
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* زر القائمة المنسدلة */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--dark);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    main {
+      max-width: min(1200px, 94vw);
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-heading h2 {
+      font-size: 2.2rem;
+      margin: 1rem 0;
+      color: var(--dark);
+    }
+
+    .section-heading p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--dark);
+      opacity: 0.8;
+      font-size: 1.1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 158, 31, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255, 158, 31, 0.4);
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--primary);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-pill:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .stages-hero {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .stages-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 158, 31, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .stages-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .stages-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .stages-hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .stages-hero p {
+      margin: 0 auto;
+      color: var(--dark);
+      opacity: 0.8;
+      max-width: 760px;
+      font-size: 1.1rem;
+    }
+
+    .stages-hero .badge {
+      align-self: center;
+    }
+
+    .quick-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .quick-benefits .badge {
+      align-self: center;
+    }
+
+    .stage-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .stage-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stage-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to left, var(--primary), var(--secondary));
+    }
+
+    .stage-card header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .stage-card header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--dark);
+    }
+
+    .stage-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .stage-label.kg1 {
+      background: var(--kg1-color);
+    }
+
+    .stage-label.kg2 {
+      background: var(--kg2-color);
+    }
+
+    .stage-meta {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      color: rgba(2, 48, 71, 0.68);
+      font-size: 0.9rem;
+    }
+
+    .stage-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      background: rgba(168, 218, 220, 0.32);
+    }
+
+    .stage-card p {
+      margin: 0;
+      color: var(--dark);
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+
+    .stage-card h3 {
+      margin: 0;
+      color: var(--dark);
+      font-size: 1.2rem;
+    }
+
+    .stage-card ul {
+      margin: 0;
+      padding-inline-start: 1.4rem;
+      color: var(--dark);
+      opacity: 0.8;
+      line-height: 1.85;
+    }
+
+    .stage-card footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: auto;
+    }
+
+    .timeline {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-header h2 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--dark);
+    }
+
+    .timeline-header p {
+      margin: 0;
+      color: var(--dark);
+      opacity: 0.7;
+    }
+
+    .timeline-steps {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-step {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border-left: 4px solid var(--primary);
+      transition: var(--transition);
+    }
+
+    .timeline-step:hover {
+      transform: translateX(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-step.kg2-bg {
+      border-left-color: var(--kg2-color);
+      background: rgba(255, 214, 165, 0.2);
+    }
+
+    .timeline-step strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+
+    .timeline-step p {
+      margin: 0;
+      color: var(--dark);
+      opacity: 0.8;
+    }
+
+    .comparison {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+      overflow-x: auto;
+    }
+
+    .comparison h2 {
+      margin: 0 0 1.5rem 0;
+      font-size: 2rem;
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .comparison table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    .comparison th,
+    .comparison td {
+      padding: 1rem 0.9rem;
+      text-align: start;
+      border-bottom: 1px solid var(--gray-light);
+      color: var(--dark);
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+
+    .comparison thead th {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .comparison tbody tr:hover {
+      background: var(--light);
+    }
+
+    .cta-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .cta-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+
+    .cta-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-card strong {
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+
+    .cta-card p {
+      margin: 0;
+      color: var(--dark);
+      opacity: 0.8;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--dark);
+      opacity: 0.7;
+      border-top: 1px solid var(--gray-light);
+      margin-top: 4rem;
+    }
+
+    /* زر المساعد الذكي */
+    .ai-assistant {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 1000;
+    }
+
+    .ai-button {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+      border-radius: 50%;
+    }
+
+    .ai-button:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .ai-button.pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 31, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(255, 158, 31, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 31, 0);
+      }
+    }
+
+    .ai-tooltip {
+      position: absolute;
+      bottom: 85px;
+      left: 0;
+      background: var(--white);
+      color: var(--dark);
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      width: 200px;
+      text-align: center;
+      font-weight: 500;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      transform: translateY(10px);
+    }
+
+    .ai-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 10px solid transparent;
+      border-top-color: var(--white);
+    }
+
+    .ai-button:hover + .ai-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* نافذة الدردشة */
+    .ai-chat {
+      position: fixed;
+      bottom: 120px;
+      left: 30px;
+      width: 350px;
+      height: 450px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      z-index: 1001;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .ai-chat.active {
+      display: flex;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .close-chat:hover {
+      transform: scale(1.2);
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .ai-message {
+      background: var(--light);
+      color: var(--dark);
+      align-self: flex-start;
+      border-bottom-right-radius: 0.2rem;
+    }
+
+    .user-message {
+      background: var(--primary-light);
+      color: var(--dark);
+      align-self: flex-end;
+      border-bottom-left-radius: 0.2rem;
+    }
+
+    .chat-footer {
+      padding: 1rem;
+      border-top: 1px solid var(--gray-light);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--gray-light);
+      border-radius: 50px;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .chat-input:focus {
+      border-color: var(--primary);
+    }
+
+    .send-button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .send-button:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    /* تحسينات للاستجابة */
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 0.3rem;
+      }
+      
+      .nav-links a {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.85rem;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background: var(--white);
+        padding: 1rem 0;
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
+        border-radius: 0 0 var(--radius) var(--radius);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+      
+      .nav-links.active {
+        display: flex;
+        max-height: 500px;
+        padding: 1rem 0;
+      }
+      
+      .nav-links a {
+        padding: 0.8rem 2rem;
+        border-radius: 0;
+        border-bottom: 1px solid var(--gray-light);
+        transition: all 0.3s ease;
+      }
+      
+      .nav-links a:hover {
+        background-color: var(--primary-light);
+        transform: translateX(-5px);
+      }
+      
+      .nav-links a:last-child {
+        border-bottom: none;
+      }
+      
+      .nav-links a.active {
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+        font-weight: bold;
+        border-right: 4px solid var(--primary);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .stages-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+      
+      .stage-card header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      
+      .ai-chat {
+        width: 300px;
+        height: 400px;
+        left: 20px;
+        bottom: 110px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .stage-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .stage-card footer {
+        flex-direction: column;
+      }
+      
+      .stage-meta {
+        flex-direction: column;
+      }
+      
+      .ai-assistant {
+        bottom: 20px;
+        left: 20px;
+      }
+      
+      .ai-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+      
+      .ai-chat {
+        width: calc(100vw - 40px);
+        left: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html" aria-label="العودة إلى الصفحة الرئيسية">
+      <span>🌟</span>
+      <span>سمارت كيدز</span>
+    </a>
+    
+    <!-- زر القائمة المنسدلة -->
+    <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="nav-links" aria-label="روابط التنقل الأساسية">
+      <a href="index.html">الرئيسية</a>
+      <a href="stages.html" class="active" aria-current="page">المراحل</a>
+      <a href="dashboard.html">لوحة التعلم</a>
+      <a href="games.html">الألعاب التعليمية</a>
+      <a href="books.html">المكتبة الرقمية</a>
+      <a href="stories.html">القصص الصوتية</a>
+      <a href="parent-report.html">لوحة ولي الأمر</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="stages-hero">
+      <span class="badge">🎯 خطة رياض الأطفال المتدرجة</span>
+      <h1>رحلة التعلم عبر مرحلتي KG1 و KG2</h1>
+      <p>
+        نقدّم في سمارت كيدز مسارًا تعليميًا متدرجًا يراعي احتياجات الأطفال بين سن 4 و6 سنوات. ستتعرف هنا على مهارات كل
+        مرحلة، نوع الأنشطة المناسبة، وكيفية دعم طفلك للوصول إلى الجاهزية التامة للصف الأول الابتدائي.
+      </p>
+      <div class="quick-benefits">
+        <span class="badge">🧠 مهارات معرفية وحسية</span>
+        <span class="badge">🗣️ لغتان: عربية وإنجليزية</span>
+        <span class="badge">🤝 شراكة الأسرة والمدرسة</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <span class="badge">مراحل التعلم</span>
+        <h2>مسار تطور طفلك التعليمي</h2>
+        <p>اكتشف الفروق بين المرحلتين واختر الأنشطة المناسبة لقدرات طفلك الحالية</p>
+      </div>
+
+      <div class="stage-cards">
+        <article class="stage-card">
+          <header>
+            <div>
+              <h2>KG1 – بداية الرحلة</h2>
+              <p style="margin:0;color:var(--dark);opacity:0.7;">الفئة العمرية: 4 – 5 سنوات</p>
+            </div>
+            <span class="stage-label kg1">KG1</span>
+          </header>
+
+          <div class="stage-meta">
+            <span>⏳ مدة المقترحة: 30 دقيقة يوميًا</span>
+            <span>🎨 أسلوب التعلم: لعب واستكشاف</span>
+          </div>
+
+          <p>
+            نركّز في هذه المرحلة على تعريف الطفل بالبيئة المدرسية الافتراضية، وتعزيز الفضول وحب السؤال عبر قصص قصيرة،
+            أنشطة حسية، وألعاب تبني المهارات اللغوية الأولى.
+          </p>
+
+          <h3>الأهداف الأساسية</h3>
+          <ul>
+            <li>التعرّف على الحروف العربية والإنجليزية بشكل بصري وسمعي.</li>
+            <li>تعزيز المهارات الحركية الدقيقة عبر التلوين والقص واللصق.</li>
+            <li>العد حتى الرقم 10 باستخدام أدوات وأنشطة تفاعلية.</li>
+            <li>استخدام مفردات بسيطة للتعبير عن المشاعر والاحتياجات.</li>
+          </ul>
+
+          <footer>
+            <a class="btn-primary" href="games.html#arabic">ألعاب اللغة لـ KG1</a>
+            <a class="btn-pill" href="books.html#arabic-books">كتب مخصصة لـ KG1</a>
+          </footer>
+        </article>
+
+        <article class="stage-card">
+          <header>
+            <div>
+              <h2>KG2 – الانطلاقة المتقدمة</h2>
+              <p style="margin:0;color:var(--dark);opacity:0.7;">الفئة العمرية: 5 – 6 سنوات</p>
+            </div>
+            <span class="stage-label kg2">KG2</span>
+          </header>
+
+          <div class="stage-meta">
+            <span>⏳ مدة المقترحة: 40 دقيقة يوميًا</span>
+            <span>📚 أسلوب التعلم: مهام صغيرة + مشاريع</span>
+          </div>
+
+          <p>
+            نطوّر المهارات التي بُنيت في KG1، مع إدخال محتوى أكثر عمقًا في القراءة، الحساب، والعلوم المبسطة. كما نركز على
+            الاستقلالية والثقة بالنفس تمهيدًا للمرحلة الابتدائية.
+          </p>
+
+          <h3>الأهداف الأساسية</h3>
+          <ul>
+            <li>قراءة جمل بسيطة وفهم الفكرة العامة للقصة.</li>
+            <li>حل مسائل جمع وطرح داخل نطاق 20، وتمييز الأشكال الهندسية.</li>
+            <li>التعبير الشفهي عن أحداث يومية باستخدام جمل مترابطة.</li>
+            <li>تنفيذ مشاريع صغيرة (مثل صنع مجسمات أو تجارب علمية بسيطة).</li>
+          </ul>
+
+          <footer>
+            <a class="btn-primary" href="games.html#math">ألعاب الرياضيات لـ KG2</a>
+            <a class="btn-pill" href="books.html#arabic-books">كتب متقدمة لـ KG2</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <div class="timeline-header">
+        <div>
+          <h2>خريطة تقدم الطفل</h2>
+          <p>دليل سريع يسهل على الأسرة والمعلمين متابعة رحلة الطفل من التعرّف الأولي إلى جاهزية الصف الأول.</p>
+        </div>
+        <span class="badge">🗓️ مواعيد تقييم شهرية</span>
+      </div>
+
+      <div class="timeline-steps">
+        <div class="timeline-step">
+          <strong>الربع الأول (KG1)</strong>
+          <p>
+            بناء العلاقة مع المدرسة الافتراضية، متابعة القصص المصورة، وتعلم الحروف الأولى مع أغاني تعليمية.
+          </p>
+        </div>
+        <div class="timeline-step">
+          <strong>الربع الثاني (KG1)</strong>
+          <p>
+            البدء في كتابة الحروف، تنفيذ أنشطة حسية، والتدرب على العد من خلال ألعاب حركية.
+          </p>
+        </div>
+        <div class="timeline-step kg2-bg">
+          <strong>الربع الثالث (KG2)</strong>
+          <p>
+            قراءة كلمات بسيطة، حل عمليات جمع/طرح، ومتابعة تجارب علمية صغيرة مع المعلّم.
+          </p>
+        </div>
+        <div class="timeline-step kg2-bg">
+          <strong>الربع الرابع (KG2)</strong>
+          <p>
+            مشروعات تخرج صغيرة، عروض تقديمية متدرجة، وجاهزية كاملة للصف الأول الابتدائي.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison">
+      <h2>مقارنة المهارات بين KG1 و KG2</h2>
+      <div style="overflow:auto;">
+        <table aria-label="جدول مقارنة المهارات بين KG1 و KG2">
+          <thead>
+            <tr>
+              <th>مجال التعلم</th>
+              <th>KG1</th>
+              <th>KG2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>اللغة العربية</td>
+              <td>التعرف على الحروف، التمييز بين الأصوات القصيرة والطويلة، ترديد كلمات شائعة.</td>
+              <td>قراءة كلمات وجمل بسيطة، كتابة الحروف ضمن كلمات، سرد قصص قصيرة.</td>
+            </tr>
+            <tr>
+              <td>الرياضيات</td>
+              <td>العد حتى 10، التعرف على الأشكال الأساسية، مقارنة المجموعات (أكثر/أقل).</td>
+              <td>عمليات جمع وطرح حتى 20، التعرف على الوقت (صباح/مساء)، فهم البنى النمطية البسيطة.</td>
+            </tr>
+            <tr>
+              <td>اللغة الإنجليزية</td>
+              <td>أغاني الحروف والألوان، مفردات الأسرة، التعرف على الأرقام حتى 10.</td>
+              <td>قراءة كلمات CVC، تكوين جمل قصيرة، كتابة الأسماء الشخصية.</td>
+            </tr>
+            <tr>
+              <td>المهارات الاجتماعية</td>
+              <td>اللعب التعاوني، مشاركة الألعاب، التعبير عن المشاعر بكلمة واحدة.</td>
+              <td>حل النزاعات البسيطة، العمل ضمن مجموعات، استخدام جمل للتعبير عن الرأي.</td>
+            </tr>
+            <tr>
+              <td>العلوم والاستكشاف</td>
+              <td>ملاحظة النباتات والحيوانات، تجارب حسية (الماء/الرمل).</td>
+              <td>تجارب علمية بسيطة (المغناطيس/الطفو)، تسجيل الملاحظات بالرسومات.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <span class="badge">الخطوات التالية</span>
+        <h2>استمر في رحلة التعلم</h2>
+        <p>اختر المسار المناسب لطفلك واستفد من جميع مواردنا التعليمية</p>
+      </div>
+
+      <div class="cta-section">
+        <article class="cta-card">
+          <strong>🎮 أنشطة مقترحة لكل مرحلة</strong>
+          <p>
+            انتقل إلى قسم الألعاب لاختيار تحديات مناسبة لـ KG1 أو KG2 حسب المجال (لغة، رياضيات، علوم).
+          </p>
+          <a class="btn-primary" href="games.html">زيارة مركز الألعاب</a>
+        </article>
+
+        <article class="cta-card">
+          <strong>📚 خطط قراءة أسبوعية</strong>
+          <p>
+            استخدم المكتبة الرقمية لاختيار ملفات PDF مع نشاط منزلي يدعم الأهداف الأسبوعية.
+          </p>
+          <a class="btn-pill" href="books.html">افتح المكتبة الرقمية</a>
+        </article>
+
+        <article class="cta-card">
+          <strong>📝 تقارير تقدم الطفل</strong>
+          <p>
+            اطلع على لوحة ولي الأمر للحصول على ملخصات أسبوعية وتوصيات مخصصة لكل مرحلة.
+          </p>
+          <a class="btn-pill" href="parent-report.html">لوحة ولي الأمر</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    معًا نبني أساسًا قويًا لمستقبل طفلك التعليمي مع سمارت كيدز! 🌟
+  </footer>
+
+  <!-- زر المساعد الذكي -->
+  <div class="ai-assistant">
+    <button class="ai-button pulse">🤖</button>
+    <div class="ai-tooltip">اسألني عن أي شيء!</div>
+    
+    <!-- نافذة الدردشة -->
+    <div class="ai-chat">
+      <div class="chat-header">
+        <h3><span>🤖</span> المساعد الذكي</h3>
+        <button class="close-chat">×</button>
+      </div>
+      <div class="chat-body">
+        <div class="message ai-message">
+          مرحباً! أنا المساعد الذكي لسمارت كيدز. كيف يمكنني مساعدتك اليوم؟
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" class="chat-input" placeholder="اكتب رسالتك هنا...">
+        <button class="send-button">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // تفعيل زر القائمة المنسدلة
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      navLinks.classList.toggle('active');
+      this.setAttribute('aria-expanded', !isExpanded);
+      
+      // إضافة تأثير للزر عند النقر
+      if (!isExpanded) {
+        this.style.transform = 'rotate(90deg)';
+      } else {
+        this.style.transform = 'rotate(0deg)';
+      }
+    });
+    
+    // إغلاق القائمة عند النقر على رابط (لتحسين تجربة المستخدم على الجوال)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.style.transform = 'rotate(0deg)';
+      });
+    });
+
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navLinks.contains(event.target) || menuToggle.contains(event.target);
+      
+      if (!isClickInsideNav && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // تفعيل المساعد الذكي
+    const aiButton = document.querySelector('.ai-button');
+    const aiChat = document.querySelector('.ai-chat');
+    const closeChat = document.querySelector('.close-chat');
+    const sendButton = document.querySelector('.send-button');
+    const chatInput = document.querySelector('.chat-input');
+    const chatBody = document.querySelector('.chat-body');
+    
+    aiButton.addEventListener('click', () => {
+      aiChat.classList.toggle('active');
+    });
+    
+    closeChat.addEventListener('click', () => {
+      aiChat.classList.remove('active');
+    });
+    
+    function addMessage(text, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
+      messageDiv.textContent = text;
+      chatBody.appendChild(messageDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+    
+    sendButton.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message) {
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // محاكاة رد المساعد
+        setTimeout(() => {
+          const responses = [
+            "هذا سؤال رائع! يمكنني مساعدتك في ذلك.",
+            "أفهم ما تقصده. دعني أقدم لك بعض المعلومات المفيدة.",
+            "شكراً لسؤالك! إليك الإجابة التي تبحث عنها.",
+            "أنا هنا لمساعدتك. هل تحتاج إلى مزيد من التفاصيل؟"
+          ];
+          const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+          addMessage(randomResponse);
+        }, 1000);
+      }
+    });
+    
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+  <!-- زر العودة -->
+  <style>
+    .return-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #e8822a, #ff9d45);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid #ffb366;
+    }
+    
+    .return-button:hover {
+      background: linear-gradient(135deg, #ff9d45, #e8822a);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+    
+    .return-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .return-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <a href="javascript:history.back()" class="return-button">← عودة</a>
+
+</body>
+</html>
